@@ -2,15 +2,18 @@
 <html>
 <head>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
+<script type="text/javascript">
+  if (grecaptcha.getResponse() == "success") {
+    function Redirect() {
+      window.location.href = "example.com"; // Correct here
+    }
+    document.write("You will be redirected to a new page in 5 seconds ");      
+      setTimeout(Redirect,5000); // Correct here
+  }
+  else alert("You can't proceed!");
+</script>
+ </head>
 <body>
-    <form action="?" method="POST">
-      <div class="g-recaptcha" data-sitekey="6Lfst9gZAAAAAFO3DeNgVJgsMgy3-UCMhHSsSmWv"></div>
-      <br/>
-      <input type="submit" value="Submit">
-    </form>
-if(grecaptcha.getResponse().length === 0) {
-      window.location = "https://google.com";
-}
+<div data-type="image" class="g-recaptcha" data-sitekey="6Lfst9gZAAAAAFO3DeNgVJgsMgy3-UCMhHSsSmWv"></div>
 </body>
 </html>
