@@ -1,19 +1,30 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<meta http-equiv="refresh" content="5; URL=https://mega.nz/folder/0jZAnJyY#lMXkPVQsSV0vIurQanfjcA" />
+ 
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"> 
  </head>
+ <style>
+  body {
+          font-family: 'Varela Round', serif;
+          font-size: 24px;
+          overflow-y: hidden;
+          overflow-x: hidden;
+      }
+        div {text-align: center;}
+ </style>
 <body>
+<p>You will be redirected to my downloads folder in: <span id="countdowntimer">10 </span> seconds</p>
+
 <script type="text/javascript">
-  if (grecaptcha.getResponse() == "success") {
-    function Redirect() {
-      window.location.href = "example.com"; // Correct here
-    }
-    document.write("You will be redirected to a new page in 5 seconds ");      
-      setTimeout(Redirect,5000); // Correct here
-  }
-  else alert("You can't proceed!");
+    var timeleft = 5;
+    var downloadTimer = setInterval(function(){
+    timeleft--;
+    document.getElementById("countdowntimer").textContent = timeleft;
+    if(timeleft <= 0)
+        clearInterval(downloadTimer);
+    },1000);
 </script>
-  <div data-type="image" class="g-recaptcha" data-sitekey="6Lfst9gZAAAAAFO3DeNgVJgsMgy3-UCMhHSsSmWv"></div>
 </body>
 </html>
